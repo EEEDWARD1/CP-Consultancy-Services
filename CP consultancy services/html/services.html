@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services we provide</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@300;400;500&display=swap');
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSideBar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="/html/about.html">About</a></li>
+            <li><a href="/html/services.html">Services</a></li>
+            <li><a href="/html/sectors.html">Sectors</a></li>
+            <li><a href="/html/contact-us.html">Contact Us</a></li>
+        </ul>
+        <ul>
+            <li><a class="logo" href="../index.html"><img id="logo" src="/images/logo.jpg" alt="CP Consultancy Services"></a></li>
+            <li class="hideOnMobile"><a href="/html/about.html">About</a></li>
+            <li class="hideOnMobile"><a href="/html/services.html">Services</a></li>
+            <li class="hideOnMobile"><a href="/html/sectors.html">Sectors</a></li>
+            <li class="hideOnMobile"><a href="/html/contact-us.html">Contact Us</a></li>
+            <li class="menu-button" onclick=showSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="white"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>        </ul>
+    </nav>
+
+    <div class="page-content">
+        <main>
+            <div class="image-slideshow">
+                <img src="../images/img1.webp" alt="Image 1">
+                <img src="../images/img2.webp" alt="Image 2">
+                <img src="../images/img3.webp" alt="Image 3">
+                <img src="../images/img4.webp" alt="Image 4">
+                <img src="../images/img5.webp" alt="Image 5">
+            </div>
+            <div id="services-content"class="content">
+                <h3>Services we provide</h3>
+                <button type="button" class="collapsible">Project Management</button>
+                <div class="collapsible-content">
+                    <p>Acting as project manager to represent the client and employer in the day-to-day
+                        management of a project, we will support client as early as possible in the
+                        development of the project so that they can ensure the correct structure and
+                        systems are in place from the outset. As project manager, we will be primarily
+                        
+                        responsible for taking your idea and bringing it to life using best practice and
+                        professional skills.</p>
+                    <p>We will be responsible for the day-today detailed management of the project and
+                        provide the interface between the project sponsor and the supplier members of the
+                        project team.</p>
+                </div>
+                <button type="button" class="collapsible">Employer's Agent</button>
+                <div class="collapsible-content">
+                    <p>We are skilled and effective Employer’s Agents (EA) and are highly experienced
+                        across a range of sectors. Acting as Lead Consultant or EA on behalf of the client
+                        to deliver JCT Design &amp; Build contracts, we can carry out this service either from
+                        the client organisation such as an in-house project manager, or as an independent
+                        EA appointed by the client.</p>
+                    <p>As EA, we also carry out other tasks on the client&#39;s behalf prior to the award of a
+                        contract, such as employing, forming and managing design team, co-ordinating the
+                        tender process, co-ordinating the novation of consultants, collating contract
+                        documents for execution and implementing change control procedures. We will
+                        represent the client, manage and complete obligations under the contract, and for
+                        the contractor to establish correct authorities and instruction from project inception
+                        stage towards the end of defect period.</p>
+                </div>
+                <button type="button" class="collapsible">Quantity Surveying</button>
+                <div class="collapsible-content">
+                    <p>Our experienced and knowledgeable cost management expert understand the
+                        importance of delivering a project to meet your budget and financial expectations.
+                        We will work with clients to develop aspirations, offer best value for money and
+                        maximise budget efficiency.</p>
+                    <p>We provide expert advice on construction costs to ensure that proposed projects
+                        are affordable, commercially viable, and offer good value for money. We will help
+                        the client and the design team assess and compare different options, track
+                        variations, and ensuring that costs remain under control as the project progresses.
+                    </p>
+                </div>
+                <button type="button" class="collapsible">Clerks of Works</button>
+                <div class="collapsible-content">
+                    <p>Employers, Local Authorities and Housing Associations have the challenge of
+                        ensuring that their construction projects achieve value for money and are
+                        completed to a high quality in terms of workmanship, materials, construction
+                        standards and building regulation statutory compliance.</p>
+                    <p>As an independent third party, we will inspect projects to protect the Clients
+                        interests throughout the construction process. We will anticipate; interpret; inspect;
+                        record; report; advise and guide; help reduce risk; provide guidance on health and
+                        safety matters; assist in getting it right first time and issue comprehensive report
+                        for each site visit.</p>
+                </div>
+
+                <div class="page-padding">
+                    <p></p>
+                </div>
+            </div>
+        </main>
+    
+        <footer>
+            <ul>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="/html/contact-us.html">Contact</a></li>
+                <li><a href="#">©CP Consultancy Service 2023</a></li>
+            </ul>
+        </footer>
+    </div>
+ 
+
+    <script>
+        document.body.className='js';
+
+        function showSideBar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.opacity = '1';
+            sidebar.style.pointerEvents = 'auto';
+        }
+
+        function hideSideBar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.opacity = '0';
+            sidebar.style.pointerEvents = 'none';
+        }
+
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.image-slideshow img');
+
+        function fadeImages() {
+            images[currentIndex].style.opacity = 0;
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.opacity = 1;
+        }
+
+        setInterval(fadeImages, 5000); // Change images every 5 seconds
+        fadeImages(); // Start the fading process
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+        }
+    </script>
+</body>
+</html>
