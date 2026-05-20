@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Open_Sans, Poppins } from "next/font/google";
 
+import { ContactCta } from "@/components/sections/ContactCta";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import "@/styles/globals.css";
@@ -131,6 +132,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main-content" className="flex-1" tabIndex={-1}>
           {children}
         </main>
+        <ContactCta />
         <Footer />
       </body>
     </html>
