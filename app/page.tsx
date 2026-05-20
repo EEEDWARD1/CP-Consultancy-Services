@@ -53,6 +53,7 @@ const webPageSchema = {
 };
 
 const heroTitleWords = ["Building", "Your", "Vision"];
+const heroTextWords = homeContent.heroText.split(" ");
 
 export default function HomePage() {
   return (
@@ -90,15 +91,34 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="mt-6 max-w-2xl font-body text-base leading-8 text-white/90 sm:text-xl">
-              {homeContent.heroText}
+              <span className="sr-only">{homeContent.heroText}</span>
+              <span aria-hidden="true" className="inline-flex flex-wrap gap-x-1.5 gap-y-1 sm:gap-x-2">
+                {heroTextWords.map((word, index) => (
+                  <span
+                    key={`${word}-${index}`}
+                    className="hero-word-reveal inline-block"
+                    style={{ animationDelay: `${520 + index * 55}ms` }}
+                  >
+                    {word}
+                  </span>
+                ))}
+              </span>
             </p>
-            <ButtonLink
-              href="/contact-us"
-              className="mt-9 gap-2 bg-white !text-brand-primary hover:bg-brand-accent hover:!text-brand-primary"
-            >
-              <span>{homeContent.heroCta}</span>
-              <ArrowRight aria-hidden="true" className="h-4 w-4" />
-            </ButtonLink>
+            <div className="mt-7 flex flex-wrap gap-3 sm:mt-9">
+              <ButtonLink
+                href="/services"
+                className="gap-2 bg-white !text-brand-primary hover:bg-brand-accent hover:!text-brand-primary"
+              >
+                <span>View Services</span>
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </ButtonLink>
+              <ButtonLink
+                href="/sectors"
+                className="border border-white/70 bg-white/10 !text-white shadow-none backdrop-blur-sm hover:border-brand-accent hover:bg-brand-accent hover:!text-brand-primary"
+              >
+                <span>Sectors</span>
+              </ButtonLink>
+            </div>
           </div>
         </div>
       </section>
