@@ -1,6 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function ContactCta() {
+  const pathname = usePathname();
+
+  if (pathname === "/contact-us") {
+    return null;
+  }
+
   return (
     <section
       aria-labelledby="contact-cta-heading"
