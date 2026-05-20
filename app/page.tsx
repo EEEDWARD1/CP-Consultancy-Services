@@ -52,6 +52,8 @@ const webPageSchema = {
   isPartOf: { "@type": "WebSite", url: BASE }
 };
 
+const heroTitleWords = ["Building", "Your", "Vision"];
+
 export default function HomePage() {
   return (
     <>
@@ -64,17 +66,28 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
 
-      <section className="relative isolate min-h-[80svh] overflow-hidden bg-brand-primary">
+      <section className="vision-gradient-banner relative isolate min-h-[80svh] overflow-hidden bg-brand-primary">
         <ImageSlideshow
           images={slideshowImages}
-          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
-          overlay
+          className="pointer-events-none absolute inset-0 -z-20 h-full w-full opacity-35 mix-blend-soft-light"
           priority
         />
+        <div className="absolute inset-0 -z-10 bg-brand-primary/35" />
         <div className="relative z-10 mx-auto flex min-h-[80svh] max-w-7xl items-center px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-20">
           <div className="max-w-3xl">
             <h1 className="text-balance text-4xl font-semibold leading-tight text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
-              {homeContent.heroTitle}
+              <span className="sr-only">Building Your Vision</span>
+              <span aria-hidden="true" className="flex flex-wrap gap-x-4 gap-y-2">
+                {heroTitleWords.map((word, index) => (
+                  <span
+                    key={word}
+                    className="hero-word-reveal inline-block"
+                    style={{ animationDelay: `${index * 140}ms` }}
+                  >
+                    {word}
+                  </span>
+                ))}
+              </span>
             </h1>
             <p className="mt-6 max-w-2xl font-body text-base leading-8 text-white/90 sm:text-xl">
               {homeContent.heroText}
